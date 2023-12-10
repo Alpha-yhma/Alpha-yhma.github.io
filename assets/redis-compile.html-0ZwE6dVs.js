@@ -1,7 +1,0 @@
-import{_ as s}from"./plugin-vue_export-helper-x3n3nnut.js";import{o as a,c as n,f as e}from"./app-PZddbQnF.js";const i={},t=e(`<h3 id="_1-安装编译环境" tabindex="-1"><a class="header-anchor" href="#_1-安装编译环境" aria-hidden="true">#</a> 1. 安装编译环境</h3><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>yum <span class="token parameter variable">-y</span> <span class="token function">install</span> gcc
-<span class="token function">wget</span> https://github.com/redis/redis/archive/7.0.11.tar.gz
-<span class="token function">tar</span> <span class="token parameter variable">-zxf</span> redis-7.0.11.tar.gz
-<span class="token builtin class-name">cd</span> redis-7.0.11
-<span class="token function">make</span> <span class="token assign-left variable">MALLOC</span><span class="token operator">=</span>libc
-<span class="token function">make</span> <span class="token function">install</span> <span class="token assign-left variable">PREFIX</span><span class="token operator">=</span>/usr/local/redis
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2),l=[t];function c(r,o){return a(),n("div",null,l)}const u=s(i,[["render",c],["__file","redis-compile.html.vue"]]);export{u as default};

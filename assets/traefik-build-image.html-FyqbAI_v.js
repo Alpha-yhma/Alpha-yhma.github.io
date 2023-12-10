@@ -1,0 +1,8 @@
+import{_ as s}from"./plugin-vue_export-helper-x3n3nnut.js";import{o as n,c as a,f as e}from"./app-3iJ96tQD.js";const t={},i=e(`<div class="language-docker line-numbers-mode" data-ext="docker"><pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> alpine:3 <span class="token keyword">AS</span> src</span>
+<span class="token instruction"><span class="token keyword">ARG</span> PLUGIN_MODULE=github.com/traefik/plugindemo</span>
+<span class="token instruction"><span class="token keyword">ARG</span> PLUGIN_GIT_REPO=https://github.com/traefik/plugindemo.git</span>
+<span class="token instruction"><span class="token keyword">RUN</span> apk add --update git &amp;&amp; <span class="token operator">\\</span>
+    git clone <span class="token variable">\${PLUGIN_GIT_REPO}</span> /plugins-local/src/<span class="token variable">\${PLUGIN_MODULE}</span> --depth 1 --single-branch --branch master</span>
+<span class="token instruction"><span class="token keyword">FROM</span> traefik:v2.9</span>
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">src</span></span> /plugins-local /plugins-local</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,1),o=[i];function c(l,p){return n(),a("div",null,o)}const k=s(t,[["render",c],["__file","traefik-build-image.html.vue"]]);export{k as default};
