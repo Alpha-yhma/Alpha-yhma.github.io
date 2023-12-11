@@ -1,2 +1,1 @@
-# Alpha-yhma.github.io
-技术文档
+VuePress 技术文档
