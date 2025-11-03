@@ -4,7 +4,7 @@ layout: BlogHome
 icon: home
 title: 主页
 heroImage: /logo.svg
-heroText: 一个简单的知识网站
+heroText: 知识分享网站
 heroFullScreen: false
 tagline: false
 projects:
@@ -38,6 +38,6 @@ projects:
     desc: 自定义详细介绍
     link: https://你的自定义链接
 
-footer: false
-copyright: false
+footer: true
+#copyright: true
 ---

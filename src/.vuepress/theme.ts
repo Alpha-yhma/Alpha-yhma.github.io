@@ -29,8 +29,19 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: "默认页脚",
+  footer: `<p>
+            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">
+                皖ICP备2025101901号-1
+            </a>
+<!--         公安备案号（含图标） -->
+<!--            <img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" class="police-icon" alt="公安备案图标" style="width: 16px; margin-left: 20px">-->
+<!--            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=XXXXXXXXXX" target="_blank" rel="noopener noreferrer">-->
+<!--                京公网安备XXXXXXXXXX号-->
+<!--            </a>-->
+        </p>
+`,
 
+  copyright: `<p>@ ${new Date().getFullYear()} iikaros.top 版权所有</p>`,
   displayFooter: true,
 
   blog: {
