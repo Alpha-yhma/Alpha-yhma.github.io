@@ -29,17 +29,13 @@ export default hopeTheme({
   // sidebar
   sidebar,
 
-  footer: `<p>
-            <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener noreferrer">
-                皖ICP备2025101901号-1
-            </a>
-<!--         公安备案号（含图标） -->
-<!--            <img src="https://beian.mps.gov.cn/img/logo01.dd7ff50e.png" class="police-icon" alt="公安备案图标" style="width: 16px; margin-left: 20px">-->
-<!--            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=XXXXXXXXXX" target="_blank" rel="noopener noreferrer">-->
-<!--                京公网安备XXXXXXXXXX号-->
-<!--            </a>-->
-        </p>
-`,
+  footer: `<a class="icp-badge" href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" aria-label="皖ICP备2026039000号-1（在新窗口打开工信部备案查询）">
+    <svg class="icp-badge-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <rect x="5" y="3" width="14" height="18" rx="2" />
+      <path d="M9 8h6M9 12h6M9 16h4" />
+    </svg>
+    <span>皖ICP备2026039000号-1</span>
+  </a>`,
 
   copyright: `<p>@ ${new Date().getFullYear()} iikaros.top 版权所有</p>`,
   displayFooter: true,
