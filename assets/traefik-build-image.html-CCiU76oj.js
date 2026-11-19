@@ -1,0 +1,8 @@
+import{_ as n}from"./plugin-vue_export-helper-DlAUqK2U.js";import{o as a,c as e,f as t}from"./app-uYGw6U5D.js";const o={};function i(l,s){return a(),e("div",null,[...s[0]||(s[0]=[t(`<p>构建时，请通过 <code>--build-arg</code> 传入插件模块路径和仓库地址。</p><div class="language-docker line-numbers-mode" data-ext="docker"><pre class="language-docker"><code><span class="token instruction"><span class="token keyword">FROM</span> alpine:3 <span class="token keyword">AS</span> src</span>
+<span class="token instruction"><span class="token keyword">ARG</span> PLUGIN_MODULE</span>
+<span class="token instruction"><span class="token keyword">ARG</span> PLUGIN_GIT_REPO</span>
+<span class="token instruction"><span class="token keyword">RUN</span> apk add --update git &amp;&amp; <span class="token operator">\\</span>
+    git clone <span class="token string">&quot;\${PLUGIN_GIT_REPO}&quot;</span> <span class="token string">&quot;/plugins-local/src/\${PLUGIN_MODULE}&quot;</span> --depth 1 --single-branch --branch master</span>
+<span class="token instruction"><span class="token keyword">FROM</span> traefik:v2.9</span>
+<span class="token instruction"><span class="token keyword">COPY</span> <span class="token options"><span class="token property">--from</span><span class="token punctuation">=</span><span class="token string">src</span></span> /plugins-local /plugins-local</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div>`,2)])])}const r=n(o,[["render",i],["__file","traefik-build-image.html.vue"]]);export{r as default};
