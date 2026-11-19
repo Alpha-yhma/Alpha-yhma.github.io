@@ -3,15 +3,17 @@ title: K8S命令案例
 icon: fab fa-markdown
 tag: K8S
 ---
+执行下载或部署命令前，请先将对应的 URL 环境变量设为实际地址。
+
 ```bash
 # https://download.docker.com/linux/static/stable/x86_64/
 
  kubeadm init --pod-network-cidr=10.244.0.0/16
-   kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+   kubectl apply -f "${FLANNEL_MANIFEST_URL}"
    exit
    kubectl get svc -n kube-system
    kubectl get svc
-   kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+   kubectl apply -f "${FLANNEL_MANIFEST_URL}"
 kubectl get nodes
 systemctl start kubectl
 systemctl start kubelet
@@ -33,11 +35,11 @@ systemctl enable --now kubelet
    kubectl get nodes -a
    kubectl get pods
    kubectl get pods --all-namespaces
-   kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+   kubectl apply -f "${FLANNEL_MANIFEST_URL}"
    kubectl get pods --all-namespaces
    kubectl get nodes
    kubectl get pods --all-namespaces
-   kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+   kubectl apply -f "${DASHBOARD_MANIFEST_URL}"
    kubectl proxy
    kubectl proxy --help
    kubectl proxy --address=0.0.0.0 --port=8009
@@ -48,7 +50,7 @@ systemctl enable --now kubelet
    kubectl get svc -n kube-system
    kubectl proxy --address=0.0.0.0 --port=8009 --accept-hosts='^*$'
    docker images
-   kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+   kubectl apply -f "${DASHBOARD_MANIFEST_URL}"
    kubectl get svc -n 
    kubectl get svc -n kubernetes-dashboard
    kubectl proxy --address=0.0.0.0 --port=8009 --accept-hosts='^*$'
@@ -83,7 +85,7 @@ systemctl enable --now kubelet
    kubectl get ingress
    kubectl get ingress -n kube-system
    kubectl get ingress -n all-namespaces
-   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
+   kubectl apply -f "${INGRESS_NGINX_CLOUD_MANIFEST_URL}"
    kubectl gett pods -n ingress-nginx
    kubectl get pods -n ingress-nginx
    kubectl get ingress
@@ -91,13 +93,13 @@ systemctl enable --now kubelet
    kubectl get ingress nginx-web
    kubectl get pods --all-namespaces|grep nginx
    helm
-   kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/aws/deploy.yaml
+   kubectl apply -f "${INGRESS_NGINX_AWS_MANIFEST_URL}"
   kubectl get pods --all-namespaces|grep nginx
-  kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/aws/deploy.yaml
+  kubectl apply -f "${INGRESS_NGINX_AWS_MANIFEST_URL}"
   kubectl get p
   kubectl get pods -n ingress-nginx -o wide
   kubectl delete namespaces ingress-nginx
-  wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
+  wget -O deploy.yaml "${INGRESS_NGINX_CLOUD_MANIFEST_URL}"
   ls
   vim deploy.yaml 
   kubectl apply -f deploy.yaml 
@@ -126,7 +128,7 @@ systemctl enable --now kubelet
   kubectl get pods -o wide
   kubectl get service -o wide
   history|grep dashboard
-  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.2.0/aio/deploy/recommended.yaml
+  kubectl apply -f "${DASHBOARD_MANIFEST_URL}"
   kubectl get service -o wide
   kubectl get pods -o wide
   kubectl get pods --all-namespaces -o wide
@@ -139,9 +141,9 @@ systemctl enable --now kubelet
   kubectl get service -n kubernetes-dashboard -o wide
   kubectl get pods -n kubernetes-dashboard -o wide -w
   ls
-  wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/kubesphere-installer.yaml
+  wget -O kubesphere-installer.yaml "${KUBESPHERE_INSTALLER_URL}"
   kubectl apply -f kubesphere-installer.yaml 
-  wget https://github.com/kubesphere/ks-installer/releases/download/v3.0.0/cluster-configuration.yaml
+  wget -O cluster-configuration.yaml "${KUBESPHERE_CONFIG_URL}"
   ls
   vim cluster-configuration.yaml 
   kubectl apply -f cluster-configuration.yaml 
@@ -174,7 +176,7 @@ systemctl enable --now kubelet
   kubeadm reset
   kubeadm init --pod-network-cidr=10.244.0.0/16
   history|grep apply
-  kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  kubectl apply -f "${FLANNEL_MANIFEST_URL}"
   kubeadm get node
   kubectl get node
   kubectl apply -f kubesphere-installer.yaml 

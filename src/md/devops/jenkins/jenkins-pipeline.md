@@ -23,7 +23,7 @@ podTemplate(label: label, containers: [
     stage('代码编译打包') {
       container('maven') {
           
-        //   git 'https://github.com/mybatis/spring-boot-starter.git'
+        //   git env.REPOSITORY_URL
           
           withCredentials([file(credentialsId: 'maven-settings', variable: 'SETTINGS')]) {
               echo "查看 K8S 集群 Pod 列表"

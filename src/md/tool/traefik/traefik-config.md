@@ -68,5 +68,5 @@ accessLog:
 experimental:               # 实验性功能选项
   localPlugins:             # 使用本地插件
   timerplugin:
-    moduleName: "github.com/togettoyou/traefik-timer-plugin"
+    moduleName: "example.com/owner/plugin" # 使用时替换为实际模块路径
 ```
